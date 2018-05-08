@@ -22,8 +22,11 @@ Perintah instalasi dan menjalankannya
 -------------------------------------
 
 git clone https://github.com/kurniawandata/xcodepandawarouter
+
 cd xcodepandawarouter
+
 chmod -R 777 *
+
 ./xcoderouter.sh
 
 Programmer : Kurniawan. xcode.or.id. trainingxcode@gmail.com
