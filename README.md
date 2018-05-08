@@ -3,7 +3,7 @@
 X-code Pandawa Router for Ubuntu 18.04 LTS
 ------------------------------------------
 
-![alt text](http://url/to/img.png)
+![alt text](http://xcode.or.id/04_small-logo.png)
 
 Aplikasi untuk membangun NAT, DHCP Server, access log, cache web, dan VPN Server secara cepat. 
 
