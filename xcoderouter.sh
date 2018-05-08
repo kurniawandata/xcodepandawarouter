@@ -27,7 +27,7 @@ echo " Log dan lainnya                                                     ";
 echo " [14] Lihat log semua log yang tersimpan                             ";
 echo " [15] Lihat ukuran cache squid                                       ";
 echo " [16] Edit squid.conf                                                ";
-echo " [17] Akrifkan rc.local untuk NAT                                    ";
+echo " [17] Aktifkan rc.local untuk NAT                                    ";
 echo " [18] Edit rc.local                                                  ";
 echo " [19] Reboot                                                         ";
 echo " [20] Exit                                                           ";
