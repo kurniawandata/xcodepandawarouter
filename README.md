@@ -33,3 +33,8 @@ Progammer
 ---------
 
 Programmer : Kurniawan. xcode.or.id. trainingxcode@gmail.com
+
+Licensi
+------- 
+
+GNU General Public License 
