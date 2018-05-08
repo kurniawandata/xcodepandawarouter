@@ -8,4 +8,3 @@ Aplikasi untuk membangun NAT, DHCP Server, access log, cache web, dan VPN Server
 Jika ingin mengetahui lebih banyak tentang X-code Pandawa dengan berbagai fiturnya, server, dan security : http://xcodetraining.com/xcodepandawa
 
 Programmer : Kurniawan. xcode.or.id. trainingxcode@gmail.com
-------------------------------------------------------------
