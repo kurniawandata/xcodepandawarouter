@@ -29,4 +29,7 @@ chmod -R 777 *
 
 ./xcoderouter.sh
 
+Progammer 
+---------
+
 Programmer : Kurniawan. xcode.or.id. trainingxcode@gmail.com
