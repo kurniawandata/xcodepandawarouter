@@ -32,7 +32,7 @@ echo " [18] Edit rc.local                                                  ";
 echo " [19] Reboot                                                         ";
 echo " [20] Exit                                                           ";
 echo "=====================================================================";
-read -p " Masukkan Nomor Pilihan Anda [1 - 15] : " choice;
+read -p " Masukkan Nomor Pilihan Anda [1 - 20] : " choice;
 echo "";
 case $choice in
 1)  if [ -z "$(sudo ls -A /etc/default/grub)" ]; then
