@@ -34,7 +34,7 @@ Progammer
 
 Programmer : Kurniawan. xcode.or.id. trainingxcode@gmail.com
 
-Licensi
+License
 ------- 
 
 GNU General Public License 
