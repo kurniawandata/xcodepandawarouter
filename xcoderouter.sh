@@ -7,7 +7,7 @@ clear
 echo "=====================================================================";
 echo " X-code Pandawa Router for Ubuntu 18.04 Server                       ";
 echo " Progammer : Kurniawan. xcode.or.id                                  ";
-echo " Version 1.0 Beta 1                                                  ";
+echo " Version 1.0 Beta 2                                                  ";
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
 echo " Router & Server pendukung router                                    ";
 echo " [1]  Install X-code Pandawa                                         ";
@@ -112,7 +112,7 @@ case $choice in
     sudo iptables -t nat -A PREROUTING -j DNAT -d $ipwan -p tcp --dport $portip --to $iplan
     echo "Port forwading telah dilakukan"
     echo "Jika ingin tetap jalan setelah restart pastikan edit pada rc.local lalu aktifkan untuk port forwarding dengan menghilangkan tanda # lalu ganti ip address WAN, Port yang mau diarahkan dan IP address komputer LAN yang akan dituju."
-    echo "Sebelum edit rc.local, tambahkan dulu NAT, HTB, dll ke rc.local yang ada pada menu"
+    echo "Sebelum edit rc.local, tambahkan dulu NAT ke rc.local yang ada pada menu"
     ;;
 
 8) echo -n "Masukkan ip  LAN: "
@@ -124,7 +124,7 @@ case $choice in
     sudo cp support/squid1/squid.conf /etc/squid/
     sudo iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination $iplan2:3127
     echo "Jika ingin tetap jalan setelah restart pastikan edit pada rc.local lalu aktifkan iptables untuk mengarahkan port 80 ke port squid 3127 dengan menghilangkan tanda #. Jangan lupa diganti ip address LAN-nya."
-    echo "Sebelum edit rc.local, tambahkan dulu NAT, HTB, dll ke rc.local yang ada pada menu"
+    echo "Sebelum edit rc.local, tambahkan dulu NAT ke rc.local yang ada pada menu"
     read -p "Log akan aktif jika linux sudah dilakukan restart"
     fi
     ;;
@@ -138,7 +138,7 @@ case $choice in
     sudo cp support/squid2/squid.conf /etc/squid/
     sudo iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination $iplan3:3127
     echo "Jika ingin tetap jalan setelah restart pastikan edit pada rc.local lalu aktifkan iptables untuk mengarahkan port 80 ke port squid 3127 dengan menghilangkan tanda #. Jangan lupa diganti ip address lan-nya."
-    echo "Sebelum edit rc.local, tambahkan dulu NAT, HTB, dll ke rc.local yang ada pada menu"
+    echo "Sebelum edit rc.local, tambahkan dulu NAT ke rc.local yang ada pada menu"
     read -p "Log akan aktif jika linux sudah dilakukan restart"
     fi
     ;;
