@@ -14,20 +14,20 @@ Jika ingin mengetahui lebih banyak tentang X-code Pandawa dengan berbagai fiturn
 Cara menggunakan :
 ------------------
 
-Pastikan di CPU anda sudah terinstall Ubuntu Server 18.04 dengan 2 LAN Card.
+- Pastikan di CPU anda sudah terinstall Ubuntu Server 18.04 dengan 2 LAN Card.
 
-Jika belum diinstall bisa download ISO-nya di http://releases.ubuntu.com/18.04/ubuntu-18.04-live-server-amd64.iso
+- Jika belum diinstall bisa download ISO-nya di http://releases.ubuntu.com/18.04/ubuntu-18.04-live-server-amd64.iso
 
 Perintah instalasi dan menjalankannya
 -------------------------------------
 
-git clone https://github.com/kurniawandata/xcodepandawarouter
+- git clone https://github.com/kurniawandata/xcodepandawarouter
 
-cd xcodepandawarouter
+- cd xcodepandawarouter
 
-chmod -R 777 *
+- chmod -R 777 *
 
-./xcoderouter.sh
+- ./xcoderouter.sh
 
 Perbaikan dari v1.0 Beta 3 ke Beta 4
 ------------------------------------
@@ -48,9 +48,9 @@ Support
 Progammer 
 ---------
 
-Programmer : Kurniawan. xcode.or.id. trainingxcode@gmail.com
+- Programmer : Kurniawan. xcode.or.id. trainingxcode@gmail.com
 
 License
 ------- 
 
-GNU General Public License 
+- GNU General Public License 
