@@ -3,7 +3,7 @@ sudo sysctl -w net.ipv4.ip_forward=1
 /sbin/iptables -P FORWARD ACCEPT
 /sbin/iptables --table nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-#Di bawah ini untuk port forwarding, jangan lupa diganti "ipaddresslankomputeryangdituju" dengan ip address lan yang dituju
+#Di bawah ini untuk mengaktifkan port forwarding, jangan lupa diganti "ipaddresslankomputeryangdituju" dengan ip address lan yang dituju
 #sysctl -w net.ipv4.ip_forward=1
 #iptables -t nat -A PREROUTING -j DNAT -d ipaddresswan -p tcp --dport portyangdiforward --to ipaddresslankomputeryangdituju
 
