@@ -36,6 +36,7 @@ Perbaikan dari v1.0 Beta 3 ke Beta 4
 
 - Penambahan informasi tentang penggantian nama enp0s3 ke eth0
 
+- Informasi untuk rc.local semakin informatif di filenya itu sendiri
 
 Support
 -------
