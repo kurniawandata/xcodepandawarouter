@@ -7,7 +7,7 @@ clear
 echo "=====================================================================";
 echo " X-code Pandawa Router for Ubuntu 18.04 Server                       ";
 echo " Progammer : Kurniawan. xcode.or.id                                  ";
-echo " Version 1.0 Beta 2                                                  ";
+echo " Version 1.0 Beta 3                                                  ";
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
 echo " Router & Server pendukung router                                    ";
 echo " [1]  Install X-code Pandawa (ubah enp0s3 jadi eth0 setelah set ip)  ";
