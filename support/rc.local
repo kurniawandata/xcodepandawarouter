@@ -3,11 +3,11 @@ sudo sysctl -w net.ipv4.ip_forward=1
 /sbin/iptables -P FORWARD ACCEPT
 /sbin/iptables --table nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-#Di bawah ini untuk port forwarding
+#Di bawah ini untuk port forwarding, jangan lupa diganti "ipaddresslankomputeryangdituju" dengan ip address lan yang dituju
 #sysctl -w net.ipv4.ip_forward=1
-#iptables -t nat -A PREROUTING -j DNAT -d ipaddresswan -p tcp --dport portyangdiforward --to ipaddresslan
+#iptables -t nat -A PREROUTING -j DNAT -d ipaddresswan -p tcp --dport portyangdiforward --to ipaddresslankomputeryangdituju
 
-#dibawah ini untuk mengaktifkan squid
+#dibawah ini untuk mengaktifkan squid, jangan lupa diganti "ipaddresslan" dengan ip lan dari router
 #iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination ipaddresslan:3127
 
 exit 0
