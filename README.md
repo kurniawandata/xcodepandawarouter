@@ -1,6 +1,6 @@
 # xcodepandawarouter
 
-X-code Pandawa Router for Ubuntu 18.04 LTS Beta 5
+X-code Pandawa Router for Ubuntu 18.04 LTS Beta 6
 ------------------------------------------
 
 ![alt text](http://xcode.or.id/04_small-logo.png)
@@ -43,6 +43,10 @@ Perbaikan dari Beta 4 ke Beta 5
 
 Penambahan fitur DHCP leases
 
+Perbaikan dari Beta 5 ke Beta 6
+--------------------------------
+
+Penambahan fitur DHCP leases (real time)
 
 Support
 -------
