@@ -1,6 +1,6 @@
 # xcodepandawarouter
 
-X-code Pandawa Router for Ubuntu 18.04 LTS Beta 4
+X-code Pandawa Router for Ubuntu 18.04 LTS Beta 5
 ------------------------------------------
 
 ![alt text](http://xcode.or.id/04_small-logo.png)
@@ -29,7 +29,7 @@ Perintah instalasi dan menjalankannya
 
 - ./xcoderouter.sh
 
-Perbaikan dari v1.0 Beta 3 ke Beta 5
+Perbaikan dari v1.0 Beta 3 ke Beta 4
 ------------------------------------
 
 - Instalasi X-code Pandawa dimasukkan juga langsung setting ip, sehingga setelah restart, langsung bisa digunakan ip-nya
@@ -37,6 +37,12 @@ Perbaikan dari v1.0 Beta 3 ke Beta 5
 - Penambahan informasi tentang penggantian nama enp0s3 ke eth0
 
 - Informasi untuk rc.local semakin informatif di filenya itu sendiri
+
+Perbaikan dari Beta 4 ke Beta 5
+--------------------------------
+
+Penambahan fitur DHCP leases
+
 
 Support
 -------
