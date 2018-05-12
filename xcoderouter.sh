@@ -200,33 +200,33 @@ case $choice in
     fi
     ;;
 
-14) if [ -z "$(ls -l /var/log/squid/access.log)" ]; then
+15) if [ -z "$(ls -l /var/log/squid/access.log)" ]; then
     echo "Tidak terdeteksi log access pada squid"
     else
     sudo nano /var/log/squid/access.log
     fi
     ;;
 
-15) du -s /var/spool/squid
+16) du -s /var/spool/squid
     read -p "Tekan enter untuk melanjutkan"
     ;;
 
-16) if [ -z "$(ls -l /etc/squid/squid.conf)" ]; then
+17) if [ -z "$(ls -l /etc/squid/squid.conf)" ]; then
     echo "Tidak terdeteksi squid"
     else
     sudo nano /etc/squid/squid.conf
     fi
     ;;
 
-17) cp support/rc.local /etc/
+18) cp support/rc.local /etc/
     chmod 777 rc.local
     sudo sysmctl enable rc-local.service
     ;; 
 
-18) sudo nano /etc/rc.local
+19) sudo nano /etc/rc.local
     ;;
 
-19) read -p "Apakah anda yakin akan restart? y/n :" -n 1 -r
+20) read -p "Apakah anda yakin akan restart? y/n :" -n 1 -r
     echo 
     if [[ ! $REPLY =~ ^[Nn]$ ]]
     then
@@ -234,7 +234,7 @@ case $choice in
     fi
     ;;
 
-20) exit
+21) exit
     ;;
 *)    echo "Maaf, menu tidak ada"
 esac
