@@ -196,7 +196,7 @@ case $choice in
 14) if [ -z "$(ls -l /var/lib/dhcp/dhcpd.leases)" ]; then
     echo "Tidak terdeteksi DHCP Server"
     else
-    sudo nano /var/lib/dhcp/dhcpd.leases
+    python support/leases.py
     fi
     ;;
 
