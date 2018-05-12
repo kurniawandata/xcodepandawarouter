@@ -7,7 +7,7 @@ clear
 echo "=====================================================================";
 echo " X-code Pandawa Router for Ubuntu 18.04 Server                       ";
 echo " Progammer : Kurniawan. xcode.or.id                                  ";
-echo " Version 1.0 Beta 4 (11/05/2018)                                     ";
+echo " Version 1.0 Beta 5 (12/05/2018)                                     ";
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
 echo " Router & Server pendukung router                                    ";
 echo " [1]  Install X-code Pandawa (Untuk ganti nama ke eth0 dan eth1)     ";
@@ -24,15 +24,16 @@ echo " [12] Setting Password VPN Server                                    ";
 echo " [13] Setting ms-dns pada VPN Server                                 ";
 echo " =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-";
 echo " Log dan lainnya                                                     ";
-echo " [14] Lihat log semua log yang tersimpan                             ";
-echo " [15] Lihat ukuran cache squid                                       ";
-echo " [16] Edit squid.conf                                                ";
-echo " [17] Aktifkan rc.local untuk NAT                                    ";
-echo " [18] Edit rc.local                                                  ";
-echo " [19] Reboot                                                         ";
-echo " [20] Exit                                                           ";
+echo " [14] Lihat user yang mendapatkan akses dari DHCP Server             ";
+echo " [15] Lihat log semua log yang tersimpan                             ";
+echo " [16] Lihat ukuran cache squid                                       ";
+echo " [17] Edit squid.conf                                                ";
+echo " [18] Aktifkan rc.local untuk NAT                                    ";
+echo " [19] Edit rc.local                                                  ";
+echo " [20] Reboot                                                         ";
+echo " [21] Exit                                                           ";
 echo "=====================================================================";
-read -p " Masukkan Nomor Pilihan Anda [1 - 20] : " choice;
+read -p " Masukkan Nomor Pilihan Anda [1 - 21] : " choice;
 echo "";
 case $choice in
 1)  if [ -z "$(sudo ls -A /etc/default/grub)" ]; then
@@ -189,6 +190,13 @@ case $choice in
     echo "Edit file pptpd-options" 
     sudo nano /etc/ppp/pptpd-options
     service pptpd restart
+    fi
+    ;;
+
+14) if [ -z "$(ls -l /var/lib/dhcp/dhcpd.leases)" ]; then
+    echo "Tidak terdeteksi DHCP Server"
+    else
+    sudo nano /var/lib/dhcp/dhcpd.leases
     fi
     ;;
 
