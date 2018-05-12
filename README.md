@@ -29,7 +29,7 @@ Perintah instalasi dan menjalankannya
 
 - ./xcoderouter.sh
 
-Perbaikan dari v1.0 Beta 3 ke Beta 4
+Perbaikan dari v1.0 Beta 3 ke Beta 5
 ------------------------------------
 
 - Instalasi X-code Pandawa dimasukkan juga langsung setting ip, sehingga setelah restart, langsung bisa digunakan ip-nya
