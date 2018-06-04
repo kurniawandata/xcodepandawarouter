@@ -107,7 +107,7 @@ case $choice in
 
 7) echo -n "Masukkan ip WAN: "
     read ipwan
-    echo -n "Masukkan ip LAN: "
+    echo -n "Masukkan ip LAN pada server yang dituju : "
     read iplan
     echo -n "Masukkan port: "
     read portip
