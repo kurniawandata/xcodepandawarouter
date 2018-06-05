@@ -109,7 +109,7 @@ case $choice in
     read ipwan
     echo -n "Masukkan ip LAN pada server yang dituju : "
     read iplan
-    echo -n "Masukkan port yang akan dituju : "
+    echo -n "Masukkan nomor port yang akan diforward : "
     read portip
     sudo sysctl -w net.ipv4.ip_forward=1
     sudo iptables -t nat -A PREROUTING -j DNAT -d $ipwan -p tcp --dport $portip --to $iplan
