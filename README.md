@@ -1,6 +1,6 @@
 # xcodepandawarouter
 
-X-code Pandawa Router for Ubuntu 18.04 LTS Beta 7
+X-code Pandawa Router for Ubuntu 18.04 LTS - Full Version
 ------------------------------------------
 
 ![alt text](http://xcode.or.id/04_small-logo.png)
