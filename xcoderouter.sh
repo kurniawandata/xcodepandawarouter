@@ -1,7 +1,7 @@
 #!/bin/bash
 #Progammer : Kurniawan. trainingxcode@gmail.com. xcode.or.id.
 again='y'
-while [ $again == 'Y' ] || [ $again == 'y' ];
+while [[ $again == 'Y' ]] || [[ $again == 'y' ]];
 do
 clear
 echo "=====================================================================";
@@ -244,7 +244,7 @@ echo "Oleh Kurniawan - trainingxcode@gmail.com. xcode.or.id"
 echo ""
 echo -n "Kembali ke menu? [y/n]: ";
 read again;
-while [ $again != 'Y' ] && [ $again != 'y' ] && [ $again != 'N' ] && [ $again != 'n' ];
+while [[ $again != 'Y' ]] && [[ $again != 'y' ]] && [[ $again != 'N' ]] && [[ $again != 'n' ]];
 do
 echo "Masukkan yang anda pilih tidak ada di menu";
 echo -n "Kembali ke menu? [y/n]: ";
