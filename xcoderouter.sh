@@ -105,7 +105,7 @@ case $choice in
     ;;
 
 
-7) echo -n "Masukkan ip WAN: "
+7) echo -n "Masukkan ip WAN pada router: "
     read ipwan
     echo -n "Masukkan ip LAN pada server yang dituju : "
     read iplan
