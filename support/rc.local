@@ -3,11 +3,11 @@ sudo sysctl -w net.ipv4.ip_forward=1
 /sbin/iptables -P FORWARD ACCEPT
 /sbin/iptables --table nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-#Hapus tanda pagar pada perintah ip tables di bawah ini untuk mengaktifkan port forwarding secara otomatis setelah restart, jangan lupa diganti ipaddresswanrouter, portyangdiforward dan ipaddresslankomputeryangdituju.
+#For port forwarding :
 #sysctl -w net.ipv4.ip_forward=1
-#iptables -t nat -A PREROUTING -j DNAT -d ipaddresswanrouter -p tcp --dport portyangdiforward --to ipaddresslankomputeryangdituju
+#iptables -t nat -A PREROUTING -j DNAT -d ipaddresswanrouter -p tcp --dport (number port) --to (ip address lan server)
 
-#Perintah ip tables di bawah ini untuk mengaktifkan squid secara otomatis setelah restart, jangan lupa diganti ipaddresslanrouter.
-#iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination ipaddresslanrouter:3127
+#For transparent proxy :
+#iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination (ip address lan router):3127
 
 exit 0
