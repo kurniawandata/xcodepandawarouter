@@ -7,7 +7,7 @@ clear
 echo "=====================================================================";
 echo " X-code Pandawa Router for Ubuntu 18.04 Server                       ";
 echo " Progammer : Kurniawan. xcode.or.id                                  ";
-echo " Version 1.0 (06/06/2018)                                            ";
+echo " Version 1.0.1 (23/07/2018)                                            ";
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
 echo " Router & Server pendukung router                                    ";
 echo " [1]  Install X-code Pandawa (Untuk ganti nama ke eth0 dan eth1)     ";
@@ -53,7 +53,6 @@ case $choice in
 2)  if [ -z "$(ls -l /etc/network/interfaces)" ]; then
     echo "Tidak terdeteksi ada /etc/network/interfaces"
     else
-    cp support/interfaces /etc/network/
     sudo nano /etc/network/interfaces
     read -p "Apakah anda mau restart koneksi eth0 & eth1 sekarang? y/n :" -n 1 -r
     echo 
