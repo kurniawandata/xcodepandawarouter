@@ -7,13 +7,13 @@ clear
 echo "=====================================================================";
 echo " X-code Pandawa Router for Ubuntu 18.04 Server                       ";
 echo " Progammer : Kurniawan. xcode.or.id                                  ";
-echo " Version 1.0.2 (24/07/2018)                                          ";
+echo " Version 1.0.1 (23/07/2018)                                            ";
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
 echo " Router & Server pendukung router                                    ";
 echo " [1]  Install X-code Pandawa (Untuk ganti nama ke eth0 dan eth1)     ";
 echo " [2]  Setting IP Address untuk eth0 dan eth1                         ";
 echo " [3]  Install NAT, DHCP Server & Bandwidth monitoring                ";
-echo " [4]  Install Squid untuk access_log                                 ";
+echo " [4]  Install Squid untuk log dan cache pada client                  ";
 echo " [5]  Setting DHCP Server                                            ";
 echo " [6]  Port Forwarding                                                ";
 echo " [7]  Pasang Squid + Log (transparent)                               ";
@@ -28,7 +28,7 @@ echo " [14] Lihat user yang mendapatkan akses dari DHCP Server             ";
 echo " [15] Lihat log semua log yang tersimpan                             ";
 echo " [16] Lihat ukuran cache squid                                       ";
 echo " [17] Edit squid.conf                                                ";
-echo " [18] Aktifkan rc.local untuk NAT otomatis                           ";
+echo " [18] Aktifkan rc.local untuk NAT                                    ";
 echo " [19] Edit rc.local                                                  ";
 echo " [20] Reboot                                                         ";
 echo " [21] Exit                                                           ";
@@ -40,16 +40,13 @@ case $choice in
     echo "Tidak terdeteksi grub, anda yakin pakai Ubuntu 18.04 ?"
     else
     sudo apt-get install ifupdown
-    sudo cp support/grub /etc/default/grub
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
-    sudo cp support/resolved.conf /etc/systemd/
+    cp support/grub /etc/default/grub
+    grub-mkconfig -o /boot/grub/grub.cfg
+    cp support/resolved.conf /etc/systemd/
     sudo systemctl restart systemd-resolved
-    sudo cp support/interfaces /etc/network/
+    cp support/interfaces /etc/network/
     sudo nano /etc/network/interfaces
     read -p "Tekan enter untuk restart"
-    sudo cp support/rc.local /etc/
-    sudo chmod 777 rc.local
-    sudo sysmctl enable rc-local.service
     reboot
     fi
     ;;
@@ -74,9 +71,6 @@ case $choice in
     sudo sysctl -w net.ipv4.ip_forward=1
     sudo /sbin/iptables -P FORWARD ACCEPT
     sudo /sbin/iptables --table nat -A POSTROUTING -o eth0 -j MASQUERADE
-    sudo cp support/rc.local /etc/
-    sudo chmod 777 rc.local
-    sudo sysmctl enable rc-local.service
     echo "NAT sudah diinstall"
     sudo apt-get install isc-dhcp-server
     sudo mv /etc/dhcp/dhcp.conf /tmp
@@ -89,22 +83,11 @@ case $choice in
     fi
     ;;
 
-4)  read -p "Apakah anda yakin install Squid (Default : access_log enabled, cache : disabled) ? y/n :" -n 1 -r
+4)  read -p "Apakah anda yakin install Squid  ? y/n :" -n 1 -r
     echo  ""
     if [[ ! $REPLY =~ ^[Nn]$ ]]
     then
-    if [ -z "$(ls -l /etc/squid/squid.conf)" ]; then
-    sudo apt-get install squid3 
-    iplan2="$(ifconfig | grep -A 1 'eth1' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
-    sudo rm /etc/squid/squid.conf
-    sudo cp support/squid1/squid.conf /etc/squid/
-    sudo iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination $iplan2:3127
-    sudo sed -i "/exit 0/i\sudo iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination "$iplan2":3127" /etc/rc.local
-    read -p "Log akan aktif jika linux sudah dilakukan restart"
-    echo "Squid sudah diinstall"
-    else
-    echo "Squid sudah ada, tidak perlu diinstall lagi"
-    fi
+    sudo apt-get install squid3
     fi
     ;;
 
@@ -113,7 +96,7 @@ case $choice in
     else
     echo "Setting DHCP Server"
     sudo nano /etc/dhcp/dhcpd.conf
-    sudo service isc-dhcp-server restart
+    service isc-dhcp-server restart
     fi
     ;;   
 
@@ -121,39 +104,46 @@ case $choice in
     ;;
 
 
-7) echo "Isi file rc.local :"
-   sudo cat /etc/rc.local
-   ipwan="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
-   echo "Daftar ip LAN yang dapat dituju :"
-   sudo arp-scan --interface=eth1 --localnet
-   echo -n "Masukkan ip LAN pada server yang dituju : "
-   read iplan
-   echo -n "Masukkan nomor port yang akan diforward : "
-   read portip
-   sudo sysctl -w net.ipv4.ip_forward=1
-   sudo iptables -t nat -A PREROUTING -j DNAT -d $ipwan -p tcp --dport $portip --to $iplan
-   sudo sed -i "/exit 0/i\sudo iptables -t nat -A PREROUTING -j DNAT -d "$ipwan" -p tcp --dport "$portip" --to "$iplan"" /etc/rc.local
-   ;;
+7) echo -n "Masukkan ip WAN pada router: "
+    read ipwan
+    echo -n "Masukkan ip LAN pada server yang dituju : "
+    read iplan
+    echo -n "Masukkan nomor port yang akan diforward : "
+    read portip
+    sudo sysctl -w net.ipv4.ip_forward=1
+    sudo iptables -t nat -A PREROUTING -j DNAT -d $ipwan -p tcp --dport $portip --to $iplan
+    echo "Port forwading telah dilakukan"
+    echo "Jika ingin tetap jalan setelah restart pastikan edit pada rc.local lalu aktifkan untuk port forwarding dengan menghilangkan tanda # lalu ganti ip address WAN, Port yang mau diarahkan dan IP address komputer LAN yang akan dituju."
+    echo "Sebelum edit rc.local, tambahkan dulu NAT ke rc.local yang ada pada menu"
+    ;;
 
-8) if [ -z "$(ls -l /etc/squid/squid.conf)" ]; then
-   echo "Squid tidak terdeteksi"
-   else
-   sudo rm /etc/squid/squid.conf
-   sudo cp support/squid2/squid.conf /etc/squid/
-   echo "Access_log : Enabled, Cache : enabled"
-   read -p "Log akan aktif jika linux sudah dilakukan restart"
-   fi
-   ;;
+8) echo -n "Masukkan ip  LAN pada router: "
+    read iplan2
+    if [ -z "$(ls -A /etc/squid/squid.conf)" ]; then
+    echo "Squid tidak terdeteksi"
+    else
+    rm /etc/squid/squid.conf
+    sudo cp support/squid1/squid.conf /etc/squid/
+    sudo iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination $iplan2:3127
+    echo "Jika ingin tetap jalan setelah restart pastikan edit pada rc.local lalu aktifkan iptables untuk mengarahkan port 80 ke port squid 3127 dengan menghilangkan tanda #. Jangan lupa diganti ip address LAN-nya."
+    echo "Sebelum edit rc.local, tambahkan dulu NAT ke rc.local yang ada pada menu"
+    read -p "Log akan aktif jika linux sudah dilakukan restart"
+    fi
+    ;;
 
-9) if [ -z "$(ls -l /etc/squid/squid.conf)" ]; then
-   echo "Squid tidak terdeteksi"
-   else
-   sudo rm /etc/squid/squid.conf
-   sudo cp support/squid2/squid.conf /etc/squid/
-   echo "Access_log : Enabled, Cache : enabled"
-   read -p "Log akan aktif jika linux sudah dilakukan restart"
-   fi
-   ;;
+9) echo -n "Masukkan ip  LAN pada router: "
+    read iplan3
+    if [ -z "$(ls -l /etc/squid/squid.conf)" ]; then
+    echo "Squid tidak terdeteksi"
+    else
+    rm /etc/squid/squid.conf
+    sudo cp support/squid2/squid.conf /etc/squid/
+    sudo iptables -t nat -A PREROUTING -i eth1 -p tcp -m tcp --dport 80 -j DNAT --to-destination $iplan3:3127
+    echo "Jika ingin tetap jalan setelah restart pastikan edit pada rc.local lalu aktifkan iptables untuk mengarahkan port 80 ke port squid 3127 dengan menghilangkan tanda #. Jangan lupa diganti ip address lan-nya."
+    echo "Sebelum edit rc.local, tambahkan dulu NAT ke rc.local yang ada pada menu"
+    read -p "Log akan aktif jika linux sudah dilakukan restart"
+    fi
+    ;;
 
 10) read -p "Apakah anda yakin install VPN Server PPTP  ? y/n :" -n 1 -r
     echo  ""
@@ -168,7 +158,7 @@ case $choice in
     sudo nano /etc/pptpd.conf
     sudo nano /etc/ppp/chap-secrets
     sudo nano /etc/ppp/pptpd-options
-    sudo service pptpd restart
+    service pptpd restart
     else
     echo "Sudah ada PPTP Server"
     fi
@@ -180,7 +170,7 @@ case $choice in
     else
     echo "Edit pptpd.conf" 
     sudo nano /etc/pptpd.conf
-    sudo service pptpd restart
+    service pptpd restart
     fi
     ;;
 
@@ -189,7 +179,7 @@ case $choice in
     else
     echo "Edit file chap-secrets" 
     sudo nano /etc/ppp/chap-secrets
-    sudo service pptpd restart
+    service pptpd restart
     fi
     ;;
 
@@ -198,7 +188,7 @@ case $choice in
     else
     echo "Edit file pptpd-options" 
     sudo nano /etc/ppp/pptpd-options
-    sudo service pptpd restart
+    service pptpd restart
     fi
     ;;
 
@@ -228,12 +218,11 @@ case $choice in
     ;;
 
 18) cp support/rc.local /etc/
-    sudo chmod 777 rc.local
+    chmod 777 rc.local
     sudo sysmctl enable rc-local.service
     ;; 
 
 19) sudo nano /etc/rc.local
-    sudo sysmctl enable rc-local.service
     ;;
 
 20) read -p "Apakah anda yakin akan restart? y/n :" -n 1 -r
