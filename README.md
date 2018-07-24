@@ -1,6 +1,6 @@
 # xcodepandawarouter
 
-X-code Pandawa Router v1.0.1 for Ubuntu 18.04 LTS - Full Version
+X-code Pandawa Router v1.8 for Ubuntu 18.04 LTS - Full Version
 ------------------------------------------
 
 Released 23/07/2018
