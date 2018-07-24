@@ -128,7 +128,8 @@ case $choice in
 
 7) echo "Isi file rc.local :"
    sudo cat /etc/rc.local
-   ipwan="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+   echo -n "Masukkan ip WAN pada router : "
+   read ipwan
    echo "Daftar ip LAN yang dapat dituju :"
    sudo arp-scan --interface=eth1 --localnet
    echo -n "Masukkan ip LAN pada server yang dituju : "
