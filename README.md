@@ -12,8 +12,6 @@ Aplikasi untuk membangun NAT, DHCP Server, access log, cache web, port forwardin
 
 Versi untuk Ubuntu 18.04 LTS ini tidak sepenuhnya support Ubuntu 16.04. Untuk Ubuntu 16.04 klik di https://github.com/kurniawandata/xcodepandawastandardstable
 
-Jika ingin mengetahui lebih banyak tentang X-code Pandawa dengan berbagai fiturnya, server, dan security di versi standard dan pro maka klik http://xcodetraining.com/xcodepandawa
-
 Cara menggunakan :
 ------------------
 
