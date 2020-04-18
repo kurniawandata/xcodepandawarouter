@@ -5,7 +5,6 @@ X-code Pandawa Router v1.8 for Ubuntu 18.04 LTS - Full Version
 
 Released 25/07/2018
 -------------------
-Pada tanggal 18 April 2020 diuji dengan Ubuntu Server 18.04.4, hasilnya router tetap berjalan dengan baik. Disarankan untuk menjalankan X-code Pandawa Router ini di Ubuntu Server 18.04.4.
 
 ![alt text](http://xcode.or.id/04_small-logo.png)
 
@@ -18,7 +17,7 @@ Cara menggunakan :
 
 - Pastikan di CPU anda sudah terinstall Ubuntu Server 18.04 dengan 2 LAN Card.
 
-- Jika belum diinstall bisa download ISO-nya di http://kambing.ui.ac.id/iso/ubuntu/releases/bionic/ubuntu-18.04.4-live-server-amd64.iso
+- Jika belum diinstall bisa download ISO-nya yang terbaru di http://kambing.ui.ac.id/iso/ubuntu/releases/bionic/ubuntu-18.04.4-live-server-amd64.iso
 
 Perintah instalasi dan menjalankannya
 -------------------------------------
