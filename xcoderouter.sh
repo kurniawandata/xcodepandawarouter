@@ -5,9 +5,9 @@ while [[ $again == 'Y' ]] || [[ $again == 'y' ]];
 do
 clear
 echo "=====================================================================";
-echo " X-code Pandawa Router for Ubuntu 18.04 Server                       ";
+echo " X-code Pandawa Router for Ubuntu 18.04.4 Server                     ";
 echo " Progammer : Kurniawan. xcode.or.id                                  ";
-echo " Version 1.8 (25/07/2018)                                            ";
+echo " Version 1.9 (18/04/2020)                                            ";
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
 echo " Router & Server pendukung router                                    ";
 echo " [1]  Install X-code Pandawa (Untuk ganti nama ke eth0 dan eth1)     ";
@@ -29,7 +29,7 @@ echo " [14] Lihat user yang mendapatkan akses dari DHCP Server             ";
 echo " [15] Lihat log semua log yang tersimpan                             ";
 echo " [16] Lihat ukuran cache squid                                       ";
 echo " [17] Edit squid.conf                                                ";
-echo " [18] Aktifkan rc.local untuk NAT                                    ";
+echo " [18] Reset rc.local hanya untuk NAT dari client ke internet         ";
 echo " [19] Edit rc.local                                                  ";
 echo " [20] Reboot                                                         ";
 echo " [21] Exit                                                           ";
