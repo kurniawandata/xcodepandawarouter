@@ -16,7 +16,7 @@ Versi untuk Ubuntu 18.04 LTS ini tidak sepenuhnya support Ubuntu 16.04. Untuk Ub
 Cara menggunakan :
 ------------------
 
-- Pastikan di CPU anda sudah terinstall Ubuntu Server 18.04 dengan 2 LAN Card.
+- Pastikan di CPU anda sudah terinstall Ubuntu Server 18.04.4 dengan 2 LAN Card.
 
 - Jika belum diinstall bisa download ISO-nya yang terbaru di http://kambing.ui.ac.id/iso/ubuntu/releases/bionic/ubuntu-18.04.4-live-server-amd64.iso
 
