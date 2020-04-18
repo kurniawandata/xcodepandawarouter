@@ -33,6 +33,7 @@ Perintah instalasi dan menjalankannya
 
 
 Jika ingin donasi untuk Kurniawan :
+-----------------------------------
 
 ![alt text](http://xcodeserver.my.id/gofood.png)
 
