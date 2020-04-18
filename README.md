@@ -29,3 +29,7 @@ Perintah instalasi dan menjalankannya
 - chmod -R 777 *
 
 - ./xcoderouter.sh
+
+Donasi untuk Kurniawan
+![alt text](http://xcodeserver.my.id/gofood.png)
+![alt text](http://xcodeserver.my.id/gopay.png)
