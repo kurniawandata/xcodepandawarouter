@@ -5,6 +5,7 @@ X-code Pandawa Router v1.8 for Ubuntu 18.04 LTS - Full Version
 
 Released 25/07/2018
 -------------------
+Diuji kembali pada tanggal 18 April 2020 di Ubuntu Server 18.04.4 hasilnya berjalan dengan baik.
 
 ![alt text](http://xcode.or.id/04_small-logo.png)
 
