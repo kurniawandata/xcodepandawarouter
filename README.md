@@ -31,6 +31,19 @@ Perintah instalasi dan menjalankannya
 - ./xcoderouter.sh
 
 
+LICENSI
+------- 
+
+GNU General Public License 
+
+
+Program ini dibuat oleh :
+--------------------------------------------
+
+Kurniawan. trainingxcode@gmail.com. 
+
+xcode.or.id
+
 
 Jika ingin donasi untuk Kurniawan :
 -----------------------------------
