@@ -1,17 +1,16 @@
 # xcodepandawarouter
 
-X-code Pandawa Router v1.8 for Ubuntu 18.04 LTS - Full Version
+X-code Pandawa Router v1.8 for Ubuntu 18.04.4 LTS - Full Version
 ------------------------------------------
 
-Released 25/07/2018
+Released 18/04/2020
 -------------------
-Diuji kembali pada tanggal 18 April 2020 di Ubuntu Server 18.04.4 hasilnya berjalan dengan baik.
 
 ![alt text](http://xcode.or.id/04_small-logo.png)
 
 Aplikasi untuk membangun NAT, DHCP Server, access log, cache web, port forwarding dan VPN Server secara cepat. 
 
-Versi untuk Ubuntu 18.04 LTS ini tidak sepenuhnya support Ubuntu 16.04. Untuk Ubuntu 16.04 klik di https://github.com/kurniawandata/xcodepandawastandardstable
+Versi untuk Ubuntu 18.04.4 LTS ini tidak sepenuhnya support Ubuntu 16.04. Untuk Ubuntu 16.04 klik di https://github.com/kurniawandata/xcodepandawastandardstable
 
 Cara menggunakan :
 ------------------
