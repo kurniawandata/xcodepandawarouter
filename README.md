@@ -30,7 +30,9 @@ Perintah instalasi dan menjalankannya
 
 - ./xcoderouter.sh
 
-Donasi untuk Kurniawan
+
+
+Jika ingin donasi untuk Kurniawan :
 
 ![alt text](http://xcodeserver.my.id/gofood.png)
 
