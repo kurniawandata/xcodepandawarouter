@@ -30,6 +30,10 @@ Perintah instalasi dan menjalankannya
 
 - ./xcoderouter.sh
 
+Video
+-----
+- https://www.youtube.com/watch?v=q3sNCQ7jxLU&feature=youtu.be
+
 
 LICENSI
 ------- 
