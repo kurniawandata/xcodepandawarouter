@@ -38,7 +38,7 @@ Video
 LICENSI
 ------- 
 
-GNU General Public License 
+GNU General Public License v3
 
 
 Program ini dibuat oleh :
