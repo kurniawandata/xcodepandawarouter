@@ -1,5 +1,5 @@
 #!/bin/bash
-#Progammer : Kurniawan. trainingxcode@gmail.com. xcode.or.id.
+#Progammer : Kurniawan. kurniawan@xcodetraining.com. xcode.or.id.
 again='y'
 while [[ $again == 'Y' ]] || [[ $again == 'y' ]];
 do
@@ -255,7 +255,7 @@ case $choice in
 esac
 echo ""
 echo "X-code Pandawa"
-echo "Oleh Kurniawan - trainingxcode@gmail.com. xcode.or.id"
+echo "Oleh Kurniawan - kurniawan@xcodetraining.com. xcode.or.id"
 echo ""
 echo -n "Kembali ke menu? [y/n]: ";
 read again;
