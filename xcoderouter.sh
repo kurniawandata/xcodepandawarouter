@@ -255,7 +255,7 @@ case $choice in
 esac
 echo ""
 echo "X-code Pandawa"
-echo "Oleh Kurniawan - kurniawan@xcodetraining.com. xcode.or.id"
+echo "Oleh Kurniawan. xcode.or.id. E-mail : kurniawan@securityhub.id"
 echo ""
 echo -n "Kembali ke menu? [y/n]: ";
 read again;
